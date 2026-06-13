@@ -3,66 +3,30 @@
 <head>
 <meta charset="UTF-8">
 
-<title>在线图片压缩工具｜免费压缩JPG PNG｜不失真</title>
-<meta name="description" content="免费在线图片压缩工具，支持JPG PNG压缩，浏览器本地处理，无需上传服务器，最高节省70%空间。">
+<title>在线图片压缩工具｜JPG PNG压缩｜无损压缩最高70%</title>
 
-<style>
-body {font-family:Arial;background:#f6f7fb;margin:0;padding:20px;}
-.box {max-width:520px;margin:auto;background:white;padding:20px;border-radius:16px;}
-.ad {border:1px dashed #ccc;padding:10px;margin:10px 0;text-align:center;}
-button {width:100%;padding:12px;border:none;background:#4f46e5;color:white;border-radius:10px;}
-.info {background:#f3f4f6;padding:10px;margin-top:10px;border-radius:10px;}
-a {display:block;margin-top:10px;color:#4f46e5;}
-</style>
+<meta name="description" content="免费在线图片压缩工具，支持JPG PNG压缩，浏览器本地处理，无需上传服务器，最高节省70%图片体积。">
+
 </head>
 
-<body>
+<body style="font-family:Arial;padding:20px;max-width:700px;margin:auto;">
 
-<div class="box">
+<h1>🖼 在线图片压缩工具</h1>
 
-<h1>🖼 图片压缩工具</h1>
+<p>支持 JPG / PNG 图片压缩，完全在浏览器运行，不会上传任何图片。</p>
 
-<div class="ad">广告位（AdSense）</div>
+<h2>使用方法</h2>
+<p>上传图片 → 点击压缩 → 下载结果</p>
 
-<input type="file" id="upload">
-<button onclick="compress()">开始压缩</button>
+<h2>适用场景</h2>
+<p>网站上传 / 电商图片 / 社交媒体优化</p>
 
-<div class="info" id="info">上传图片开始处理</div>
+<h2>常见问题</h2>
+<p><b>Q：</b>会上传图片吗？<br>A：不会，所有处理在本地浏览器完成。</p>
 
-<div class="ad">推荐：JPG转WEBP工具（内链流量）</div>
-<a href="webp.html">👉 去WebP转换工具</a>
+<br>
 
-</div>
-
-<script>
-let file=null;
-
-document.getElementById("upload").onchange=e=>{
-file=e.target.files[0];
-};
-
-function compress(){
-if(!file)return;
-
-let img=new Image();
-let reader=new FileReader();
-
-reader.onload=e=>img.src=e.target.result;
-
-img.onload=()=>{
-let c=document.createElement("canvas");
-c.width=img.width;
-c.height=img.height;
-c.getContext("2d").drawImage(img,0,0);
-
-let out=c.toDataURL("image/jpeg",0.7);
-
-document.getElementById("info").innerText="压缩完成";
-};
-
-reader.readAsDataURL(file);
-}
-</script>
+<a href="webp.html">👉 推荐：JPG转WEBP工具</a>
 
 </body>
 </html>
